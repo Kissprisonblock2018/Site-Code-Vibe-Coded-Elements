@@ -1,0 +1,159 @@
+<meta charset="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+<title>Shop Categories</title>
+<style>
+<!--
+.category-grid-wrapper * {
+    box-sizing: border-box;
+}
+
+.category-grid-wrapper {
+    width: 100%;
+}
+
+.category-grid-wrapper .container {
+    width: 100%;
+}
+
+.category-grid-wrapper .main-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.category-grid-wrapper .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-grid-wrapper .category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    aspect-ratio: 1;
+    text-decoration: none;
+    display: block;
+}
+
+.category-grid-wrapper .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus state for keyboard navigation */
+.category-grid-wrapper .category-card:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .category-grid-wrapper .category-card {
+        transition: none;
+    }
+    
+    .category-grid-wrapper .category-title {
+        transition: none;
+    }
+}
+
+.category-grid-wrapper .category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.category-grid-wrapper .category-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show title on hover for desktop/tablet */
+@media (min-width: 769px) {
+    .category-grid-wrapper .category-card:hover .category-title,
+    .category-grid-wrapper .category-card:focus .category-title {
+        opacity: 1;
+    }
+}
+
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .category-grid-wrapper .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Mobile view - 2x4 grid with always visible titles */
+@media (max-width: 768px) {
+    .category-grid-wrapper .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .category-grid-wrapper .category-title {
+        opacity: 1;
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+
+    .category-grid-wrapper .category-card {
+        aspect-ratio: 1;
+    }
+    
+    .category-grid-wrapper .main-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid-wrapper .grid {
+        gap: 10px;
+    }
+
+    .category-grid-wrapper .category-title {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+    
+    .category-grid-wrapper .main-title {
+        font-size: 20px;
+    }
+}
+-->
+</style>
+<section class="category-grid-wrapper" aria-labelledby="categories-heading">    
+	<div class="container">        
+		<h2 id="categories-heading" class="main-title">Categories You May Enjoy</h2>        
+		<nav class="grid" aria-label="Product categories">            <a href="https://4goodvibes.shop/category/toys-stuffed-animals-plushies" class="category-card" rel="noopener noreferrer" aria-label="Browse Stuffed Animals &amp; Plushies category">                <img loading="lazy" src="/editor/editor-image/Stuffed-animal-Medium.jpeg" alt="Stuffed Animals &amp; Plushies" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Stuffed Animals &amp; Plushies</div>            </a>            
+            <a href="https://4goodvibes.shop/category/jewelry-earrings" class="category-card" rel="noopener noreferrer" aria-label="Browse Earrings category">                <img loading="lazy" src="/editor/editor-image/Earings-Medium.jpeg" alt="Earrings" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Earrings</div>            </a>            
+            <a href="https://4goodvibes.shop/category/candles-home-fragrances-candles" class="category-card" rel="noopener noreferrer" aria-label="Browse Candles category">                <img loading="lazy" src="/editor/editor-image/Screenshot-2025-09-29-at-8.54.15-PM.png" alt="Candles" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Candles</div>            </a>            
+            <a href="https://4goodvibes.shop/category/bath-beauty-soaps" class="category-card" rel="noopener noreferrer" aria-label="Browse Soaps category">                <img loading="lazy" src="/editor/editor-image/Soaps-Medium.jpeg" alt="Soaps" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Soaps</div>            </a>            
+            <a href="https://4goodvibes.shop/category/art-collectibles-glass-art" class="category-card" rel="noopener noreferrer" aria-label="Browse Glass Art category">                <img loading="lazy" src="/editor/editor-image/Glassart-Medium.jpeg" alt="Glass Art" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Glass Art</div>            </a>            
+            <a href="https://4goodvibes.shop/category/home-living-kitchen-dining" class="category-card" rel="noopener noreferrer" aria-label="Browse Kitchen &amp; Dining category">                <img loading="lazy" src="/editor/editor-image/KitchenandDining-Medium.jpeg" alt="Kitchen &amp; Dining" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Kitchen &amp; Dining</div>            </a>            
+            <a href="https://4goodvibes.shop/category/paper-greeting-cards" class="category-card" rel="noopener noreferrer" aria-label="Browse Greeting Cards category">                <img loading="lazy" src="/editor/editor-image/GreetingCards-Medium.jpeg" alt="Greeting Cards" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Greeting Cards</div>            </a>            
+            <a href="https://4goodvibes.shop/category/books-book-accessories" class="category-card" rel="noopener noreferrer" aria-label="Browse Book Accessories category">                <img loading="lazy" src="/editor/editor-image/Screenshot-2025-09-29-at-6.01.27-PM.png" alt="Book Accessories" class="category-image" width="400" height="400" />                
+				<div class="category-title" aria-hidden="true">Book Accessories</div>            </a>        </nav>    </div></section>
