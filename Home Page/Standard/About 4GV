@@ -1,0 +1,148 @@
+<meta charset="UTF-8"></meta>    
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>    
+<title>4GoodVibes - Handmade Gift Shop</title>    
+<style>
+<!--
+/* Scoped styles - only affects the hero section */
+        .hero-section {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            align-items: center;
+            gap: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero-image {
+            flex: 1;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-section .logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: #333;
+            margin: 0 0 30px 0;
+            letter-spacing: -1px;
+        }
+        
+        .hero-section .description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section .description p {
+            margin-bottom: 15px;
+        }
+        
+        .hero-section .cta-button {
+            background: linear-gradient(135deg, #7cb342, #8bc34a);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
+            align-self: flex-start;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .hero-section .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+            background: linear-gradient(135deg, #689f38, #7cb342);
+        }
+        
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .hero-section {
+                padding: 60px 15px;
+            }
+            
+            .hero-content {
+                padding: 15px;
+            }
+            
+            .hero-section .logo {
+                font-size: 42px;
+            }
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                padding: 40px 20px;
+                gap: 30px;
+            }
+            
+            .hero-content {
+                padding: 10px;
+            }
+            
+            .hero-image {
+                height: 250px;
+                width: 100%;
+            }
+            
+            .hero-section .logo {
+                font-size: 36px;
+            }
+            
+            .hero-section .description {
+                font-size: 16px;
+            }
+            
+            .hero-section .cta-button {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+        }
+-->
+</style>    
+<section class="hero-section">        
+        
+	<div class="hero-content">            
+            
+		<h1 class="logo">About 4GoodVibes</h1>            
+            
+		<div class="description">                
+                
+			<p>Handmade Gift Shop featuring over 400 local artists!</p>                
+                
+			<p>We carry great quality, locally handmade items - ranging from home decor, pet items, bath and body, candles, jewelry, and a lot more! We have many one-of-a-kinds finds!</p>                
+                
+			<p>4GoodVibes is open year-round. We handpick all of the items that come into our shop while thinking of you!</p>            
+            </div>            
+            <a href="https://4goodvibes.shop/shops" class="cta-button">Shop Our Sellers</a>        
+        </div>        
+        
+	<div class="hero-image">            
+            <img src="/editor/editor-image/DSCF2512-%281%29-Medium.jpeg" alt="4GoodVibes Store Front - Handmade Gift Shop featuring local artists" loading="lazy" />        
+        </div>    
+    </section>
