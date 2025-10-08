@@ -1,0 +1,383 @@
+</style>
+<div class="menu-bar">
+  <a href="#categories">Tutorials</a>
+  <a href="#shoutouts">Successes</a>
+  <a href="https://www.4goodvibesgiftshop.com/about">Our Services</a>
+  <a
+    href="https://4goodvibes.shop/custom/contact-us"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact us page"
+  >
+    Contact Us
+  </a>
+  <a
+    href="https://calendly.com/join-4goodvibes/support"
+    class="book-call-btn"
+    target="_blank"
+    rel="noopener"
+    aria-label="Book a call on Calendly"
+  >
+    Book a Call
+  </a>
+</div>
+
+
+
+
+<section class="hero container" id="learn" aria-labelledby="hero-title">
+  <h1 id="hero-title">What's New. Tutorials. Shout Outs.</h1>
+  <p>View guides written for creative entrepreneurs: marketing, operations, fulfillment, policies, taxes, and more.</p>
+</section>
+
+<div class="container layout">
+  <div class="main-content">
+    
+<!-- PLATFORM UPDATES -->
+<section id="features" aria-labelledby="features-title">
+  <div class="section-head">
+    <h2 id="features-title">Platform Updates</h2>
+  </div>
+  <div class="grid">
+
+    <article class="card lazy-load" aria-labelledby="f1h">
+      <div class="thumb" role="img" aria-label="Quick Listing thumbnail"
+           data-bg="/editor/editor-image/Quick-Listing-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="f1h">Quick Listing</h3>
+        <p>Discover how to list your items in under 2 minutes with the power of AI.</p>
+      </div>
+      <a href="https://4goodvibes.shop/quick-listing" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="f2h">
+      <div class="thumb" role="img" aria-label="Invoices thumbnail"
+           data-bg="/editor/editor-image/Invoices-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="f2h">Invoices</h3>
+        <p>Learn how to use the new invoicing feature to quickly bill customers and improve their experience.</p>
+      </div>
+      <a href="https://4goodvibes.shop/invoices" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="f3h">
+      <div class="thumb" role="img" aria-label="New Payouts thumbnail"
+           data-bg="/editor/editor-image/New-Payouts-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="f3h">New Payouts</h3>
+        <p>There is a new payout structure. Check out how it works.</p>
+      </div>
+      <a href="https://4goodvibes.shop/new-payout" class="cta">View →</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" aria-labelledby="categories-title">
+  <div class="section-head">
+    <h2 id="categories-title">Tutorial Videos By Category</h2>
+  </div>
+  <div class="grid">
+
+    <article class="card lazy-load" aria-labelledby="c5h">
+      <div class="thumb" data-bg="/editor/editor-image/Getting-Started-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c5h">Getting Started</h3>
+        <p>Quickly learn the basics to get your shop up and running.</p>
+      </div>
+      <a href="https://4goodvibes.shop/getting-started-tutorials" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="c3h">
+      <div class="thumb" data-bg="/editor/editor-image/Shop-Setup-and-Branding-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c3h">Shop Setup &amp; Branding</h3>
+        <p>Get tips and resources for setting up and branding your shop.</p>
+      </div>
+      <a href="https://4goodvibes.shop/shop-setup-branding" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="c1h">
+      <div class="thumb" data-bg="/editor/editor-image/Product-Management-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c1h">Product Management</h3>
+        <p>Manage your shop's products effectively and streamline updates.</p>
+      </div>
+      <a href="https://4goodvibes.shop/product-management" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="c4h">
+      <div class="thumb" data-bg="/editor/editor-image/Order-and-Fulfilment-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c4h">Order &amp; Fulfillment</h3>
+        <p>Get guidance on managing orders and ensuring smooth fulfillment.</p>
+      </div>
+      <a href="https://4goodvibes.shop/order-fulfillment" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="c2h">
+      <div class="thumb" data-bg="/editor/editor-image/Promotions-and-Sales-Boosters-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c2h">Promotions &amp; Sales Boosters</h3>
+        <p>Learn strategies to boost your shop's visibility and sales with promotions.</p>
+      </div>
+      <a href="https://4goodvibes.shop/promotions-sales-boosters-28" class="cta">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="c6h">
+      <div class="thumb" data-bg="/editor/editor-image/Insights-and-Reports-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="c6h">Insights &amp; Reports</h3>
+        <p>Access detailed reports and insights to analyze shop performance.</p>
+      </div>
+      <a href="https://4goodvibes.shop/insights-reports" class="cta">View →</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- SHOUTOUTS -->
+<section id="shoutouts" aria-labelledby="shoutouts-title">
+  <div class="section-header">
+    <h1 id="shoutouts-title">Seller Successes</h1>
+    <a class="btn-inline" href="https://4goodvibes.shop/seller-spotlight-1" aria-label="View All seller successes">View All</a>
+  </div>
+  <div class="grid">
+
+    <article class="card lazy-load" aria-labelledby="s1h">
+      <div class="thumb" role="img" aria-label="Night Muse Studio thumbnail"
+           data-bg="/editor/editor-image/Night-Muse-Studio-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="s1h">How Night Muse Studio is always number one</h3>
+        <p>Learn how Night Muse Studio drove so many people to her page.</p>
+      </div>
+      <a class="cta" href="https://4goodvibes.shop/how-night-muse-studio-is-always-number-one-2">View →</a>
+    </article>
+
+    <article class="card lazy-load" aria-labelledby="s2h">
+      <div class="thumb" role="img" aria-label="Artsy Cat thumbnail"
+           data-bg="/editor/editor-image/The-Artsy-Cat-Small.jpeg"></div>
+      <div class="pad">
+        <h3 id="s2h">How Artsy Cat full store discounts drove traffic</h3>
+        <p>A real seller story about why a full store discount can drive traffic.</p>
+      </div>
+      <a class="cta" href="https://4goodvibes.shop/how-artsy-cat-full-store-discounts-drove-traffic-1">View →</a>
+    </article>
+
+    <!-- New card -->
+    <article class="card lazy-load" aria-labelledby="s3h">
+      <div class="thumb" role="img" aria-label="How to use invoices thumbnail"
+           data-bg="/editor/editor-image/Screenshot-2025-10-07-at-9.46.17-PM.png"></div>
+      <div class="pad">
+        <h3 id="s3h">How to use invoices</h3>
+        <p>Quick tips on creating and sending invoices that convert.</p>
+      </div>
+      <a class="cta" href="https://4goodvibes.shop/raffles-4">View →</a>
+    </article>
+
+  </div>
+</section>
+
+
+
+<!-- Lazy Load Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyLoadElems = document.querySelectorAll('.lazy-load .thumb');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bg = entry.target.getAttribute('data-bg');
+        if (bg) {
+          entry.target.style.background = `url('${bg}') center/cover no-repeat`;
+          entry.target.removeAttribute('data-bg');
+        }
+        obs.unobserve(entry.target);
+      }
+    });
+  });
+  lazyLoadElems.forEach(el => observer.observe(el));
+});
+</script>
+
+
+
+
+  </div>
+<div class="container layout">  
+  <div class="main-content">    
+  <!-- Sidebar simplified: Community Sales Goal removed -->
+  <aside class="sidebar">    
+    <div class="sidebar-section lazy-load">
+      <h3>Connect with the community</h3>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/groups/107753967974253" target="_blank" rel="noopener">
+            Facebook Group
+          </a>
+        </li>
+        <li>
+          <a href="https://4goodvibes.shop/custom/contact-us" target="_blank" rel="noopener">
+            Contact our team
+          </a>
+        </li>
+      </ul>
+    </div>
+
+<div class="sidebar-section lazy-load">
+  <h3>Feature opportunities</h3>
+  <ul>
+    <li>
+      <a href="https://4goodvibes.shop/Featured-Seller-Stories">Get your Seller Story featured</a><br />
+      <span style="font-size: 11px; color: var(--muted); font-weight: 400;">
+        Share your story and get advertised
+      </span>
+    </li>
+    <li>
+      <a href="https://4goodvibes.shop/submit-makers-video-31">Submit Makers Video</a><br />
+      <span style="font-size: 11px; color: var(--muted); font-weight: 400;">
+        Submit a video of your craft to get featured by 4goodvibes
+      </span>
+    </li>
+    <li>
+      <a href="https://4goodvibes.shop/material-request">Material Request</a><br />
+      <span style="font-size: 11px; color: var(--muted); font-weight: 400;">
+        Request materials & supplies
+      </span>
+    </li>
+  </ul>
+</div>
+
+
+
+    <div class="sidebar-section lazy-load">
+      <h3>Upcoming Campaigns</h3>
+      <ul>
+        <li><a class="dead-link">Seller competition</a></li>
+        <li><a class="dead-link">Pink Friday</a></li>
+        <li><a class="dead-link">Cyber Monday</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section lazy-load">
+      <h3>Help Center</h3>
+      <ul>
+        <li>
+          <a href="https://4goodvibes.shop/faqs" target="_blank" rel="noopener">
+            Answers to frequently asked questions
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section aria-labelledby="ranking-title" class="ranking lazy-load">
+
+<h2 id="ranking-title">Top Sellers</h2>
+<ol class="rank-list">
+  <li class="rank-item">
+    <div class="badge">1</div>
+    <div class="logo">NM</div>
+    <div>
+      <div class="seller-name">nightmusestudio</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">2</div>
+    <div class="logo">TA</div>
+    <div>
+      <div class="seller-name">theartsycat</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">3</div>
+    <div class="logo">CQ</div>
+    <div>
+      <div class="seller-name">creativ-quirks</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">4</div>
+    <div class="logo">SS</div>
+    <div>
+      <div class="seller-name">sassy-suzi-creations</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">5</div>
+    <div class="logo">TC</div>
+    <div>
+      <div class="seller-name">terrys-crochet-cottage</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">6</div>
+    <div class="logo">AG</div>
+    <div>
+      <div class="seller-name">attitudes-and-gratitudes</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">7</div>
+    <div class="logo">JT</div>
+    <div>
+      <div class="seller-name">jepthreads</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">8</div>
+    <div class="logo">GG</div>
+    <div>
+      <div class="seller-name">ginger-snappy-gems</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">9</div>
+    <div class="logo">TT</div>
+    <div>
+      <div class="seller-name">totally-tara-creations</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">10</div>
+    <div class="logo">AO</div>
+    <div>
+      <div class="seller-name">atscustomoddities</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">11</div>
+    <div class="logo">FF</div>
+    <div>
+      <div class="seller-name">fun-and-festive</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">12</div>
+    <div class="logo">HG</div>
+    <div>
+      <div class="seller-name">hagen-gallery</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">13</div>
+    <div class="logo">KD</div>
+    <div>
+      <div class="seller-name">kellamitydesigns</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">14</div>
+    <div class="logo">TA</div>
+    <div>
+      <div class="seller-name">theartsycat-contact</div>
+    </div>
+  </li>
+  <li class="rank-item">
+    <div class="badge">15</div>
+    <div class="logo">MS</div>
+    <div>
+      <div class="seller-name">medford-soap-company</div>
+    </div>
+  </li>
+</ol>
