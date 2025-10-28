@@ -1,0 +1,357 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>    
+<meta charset="UTF-8"></meta>    
+<title>Promo Card - 8% Off</title>    
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet" />    
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js">
+//<![CDATA[
+
+//]]>
+</script>    
+<style>
+<!--
+.promo-card-container * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .promo-card-wrapper {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background-color: #f3b004;
+            animation: backgroundRotate 30s ease-in-out infinite;
+            width: 100%;
+            position: relative;
+        }
+
+        @keyframes backgroundRotate {
+            0% {
+                background-color: #f3b004;
+            }
+            25% {
+                background-color: #74cac1;
+            }
+            50% {
+                background-color: #d92355;
+            }
+            75% {
+                background-color: #39b220;
+            }
+            100% {
+                background-color: #f3b004;
+            }
+        }
+
+        .promo-card {
+            width: 100%;
+            max-width: 640px;
+            height: 400px;
+            position: relative;
+            perspective: 1200px;
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .promo-card:hover {
+            transform: translateX(-160px) rotate(-5deg);
+        }
+
+        .promo-card:hover .card-outside {
+            transform: rotateY(-130deg);
+        }
+
+        .card-outside,
+        .card-inside {
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            left: 50.1%;
+        }
+
+        .card-inside {
+            background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            box-shadow: inset 3px 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-inside img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+
+        .card-promo-text {
+            text-align: center;
+            color: #333;
+        }
+
+        .card-promo-text h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .card-promo-text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-promo-code {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 2px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-outside {
+            transform-style: preserve-3d;
+            z-index: 1;
+            transform-origin: left;
+            transition: transform 2s ease;
+            cursor: pointer;
+        }
+
+        .card-front,
+        .card-back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px 0 0 10px;
+            box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-front img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .card-main-text {
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .card-small-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+            border-radius: 10px 0 0 10px;
+            box-shadow: inset -3px 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .promo-card-wrapper {
+                padding: 40px 15px;
+                min-height: 400px;
+            }
+
+            .promo-card {
+                max-width: 90%;
+                height: 320px;
+            }
+
+            .promo-card:hover {
+                transform: translateX(-100px) rotate(-3deg);
+            }
+
+            .card-promo-text h2 {
+                font-size: 16px;
+            }
+
+            .card-promo-text p {
+                font-size: 13px;
+            }
+
+            .card-promo-code {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .card-front {
+                padding: 20px 15px;
+            }
+
+            .card-main-text {
+                font-size: 20px;
+            }
+
+            .card-small-text {
+                font-size: 12px;
+            }
+
+            .card-front img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .card-inside {
+                padding: 20px 15px;
+            }
+
+            .card-inside img {
+                height: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .promo-card-wrapper {
+                padding: 30px 10px;
+                min-height: 350px;
+            }
+
+            .promo-card {
+                max-width: 95%;
+                height: 280px;
+            }
+
+            .promo-card:hover {
+                transform: translateX(-70px) rotate(-2deg);
+            }
+
+            .card-promo-text h2 {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .card-promo-text p {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .card-promo-code {
+                font-size: 13px;
+                padding: 8px 16px;
+            }
+
+            .card-front {
+                padding: 15px 10px;
+            }
+
+            .card-main-text {
+                font-size: 17px;
+                line-height: 1.2;
+            }
+
+            .card-small-text {
+                font-size: 11px;
+            }
+
+            .card-front img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .card-inside {
+                padding: 15px 10px;
+            }
+
+            .card-inside img {
+                height: 45%;
+                margin-bottom: 12px;
+            }
+        }
+-->
+</style>    
+<div class="promo-card-container">        
+	<div class="promo-card-wrapper">            
+		<div class="promo-card">                
+			<div class="card-outside">                    
+				<div class="card-front">                        <img src="/editor/editor-image/Untitled-design.gif" alt="Gift Icon" />                        
+					<p class="card-main-text">Let's Celebrate<br />
+						our 8th Together</p>                        
+					<p class="card-small-text">Click for a surprise!</p>                    </div>                    
+				<div class="card-back">&nbsp;</div>                </div>                
+			<div class="card-inside">                    <img src="/editor/editor-image/image-%281%29.png" alt="Product Collection" />                    
+				<div class="card-promo-text">                        
+					<h2>🎉 We Have A Surprise For You!</h2>                        
+					<p>Get <strong>8% OFF</strong> using the code</p>                        <span class="card-promo-code">8BDAY</span>                    </div>                </div>            </div>        </div>    </div>    
+<script>
+//<![CDATA[
+const outside = document.querySelector('.card-outside');
+        let hasTriggeredConfetti = false;
+
+        outside.addEventListener('transitionend', function(e) {
+            if (e.propertyName === 'transform' && !hasTriggeredConfetti) {
+                const transform = window.getComputedStyle(outside).transform;
+                
+                if (transform !== 'none' && transform.includes('matrix')) {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#f3b004', '#d92355', '#39b220', '#74cac1']
+                    });
+                    
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 50,
+                            angle: 60,
+                            spread: 55,
+                            origin: { x: 0 },
+                            colors: ['#f3b004', '#d92355', '#39b220', '#74cac1']
+                        });
+                    }, 200);
+                    
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 50,
+                            angle: 120,
+                            spread: 55,
+                            origin: { x: 1 },
+                            colors: ['#f3b004', '#d92355', '#39b220', '#74cac1']
+                        });
+                    }, 400);
+                    
+                    hasTriggeredConfetti = true;
+                }
+            }
+        });
+
+        outside.addEventListener('transitionstart', function() {
+            setTimeout(() => {
+                hasTriggeredConfetti = false;
+            }, 500);
+        });
+//]]>
+</script>
