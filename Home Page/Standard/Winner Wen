@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Winner Wednesday raffle tickets - vintage style connected ticket strip for contests, giveaways, and promotional events">
+    <meta name="keywords" content="raffle tickets, winner tickets, contest tickets, giveaway, promotional tickets, vintage tickets">
+    <title>Winner Wednesday Raffle Tickets | Vintage Style Contest Tickets</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 40px 20px;
+            overflow-x: auto;
+        }
+
+        .ticket-strip-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 40px 0;
+        }
+
+        .ticket-strip-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            min-width: min-content;
+            padding: 0 20px;
+        }
+
+        /* Individual Ticket Styling */
+        .raffle-ticket {
+            position: relative;
+            width: 280px;
+            height: 140px;
+            background: linear-gradient(135deg, #d4e82e 0%, #c5d927 50%, #d4e82e 100%);
+            border: 4px solid #a8b824;
+            border-radius: 8px;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            margin-right: -4px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .raffle-ticket:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 12px 24px rgba(0, 0, 0, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .raffle-ticket:focus {
+            outline: 3px solid #333;
+            outline-offset: 3px;
+            z-index: 10;
+        }
+
+        /* Perforated Edge Effect - Left Side */
+        .raffle-ticket::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #a8b824 0px,
+                #a8b824 6px,
+                transparent 6px,
+                transparent 12px
+            );
+        }
+
+        /* Perforated Edge Effect - Right Side */
+        .raffle-ticket::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #a8b824 0px,
+                #a8b824 6px,
+                transparent 6px,
+                transparent 12px
+            );
+        }
+
+        /* Ticket Content Container */
+        .ticket-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Main Title "Winner Wednesday" */
+        .ticket-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: #1a1a1a;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 
+                2px 2px 0px rgba(255, 255, 255, 0.3),
+                -1px -1px 0px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        /* Serial Number */
+        .ticket-serial {
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Decorative Corner Elements */
+        .ticket-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #1a1a1a;
+            opacity: 0.3;
+        }
+
+        .corner-tl {
+            top: 10px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-tr {
+            top: 10px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bl {
+            bottom: 10px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-br {
+            bottom: 10px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Texture Overlay */
+        .ticket-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px
+                );
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .raffle-ticket {
+                width: 220px;
+                height: 110px;
+            }
+
+            .ticket-title {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .ticket-serial {
+                font-size: 12px;
+                bottom: 8px;
+                right: 12px;
+            }
+
+            .ticket-corner {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .raffle-ticket {
+                width: 180px;
+                height: 90px;
+            }
+
+            .ticket-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .ticket-serial {
+                font-size: 10px;
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .raffle-ticket {
+                transition: none;
+            }
+            
+            .raffle-ticket:hover {
+                transform: none;
+            }
+        }
+
+        /* SEO and Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- SEO Header Section -->
+    <header>
+        <h1>Winner Wednesday Raffle Tickets</h1>
+        <p class="description">Shop all the Winner Wednesday raffles that are still open anytime and check out all at once - it's never been easier to enter the raffles!</p>
+    </header>
+
+    <!-- Main Ticket Strip -->
+    <main class="ticket-strip-wrapper" role="main" aria-label="Winner Wednesday raffle ticket strip">
+        <div class="ticket-strip-container">
+            
+            <!-- Ticket 1 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31221" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31221</div>
+                </div>
+            </a>
+
+            <!-- Ticket 2 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31222" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31222</div>
+                </div>
+            </a>
+
+            <!-- Ticket 3 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31223" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31223</div>
+                </div>
+            </a>
+
+            <!-- Ticket 4 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31224" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31224</div>
+                </div>
+            </a>
+
+            <!-- Ticket 5 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31225" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31225</div>
+                </div>
+            </a>
+
+            <!-- Ticket 6 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31226" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31226</div>
+                </div>
+            </a>
+
+            <!-- Ticket 7 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31227" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31227</div>
+                </div>
+            </a>
+
+            <!-- Ticket 8 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31228" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31228</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Winner Wednesday Raffle Tickets",
+        "description": "Vintage-style raffle tickets with perforated edges and sequential serial numbers, perfect for contests and giveaways",
+        "image": "https://example.com/images/winner-wednesday-tickets.jpg",
+        "brand": {
+            "@type": "Brand",
+            "name": "Winner Wednesday"
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Winner Wednesday raffle tickets - vintage style connected ticket strip for contests, giveaways, and promotional events">
+    <meta name="keywords" content="raffle tickets, winner tickets, contest tickets, giveaway, promotional tickets, vintage tickets">
+    <title>Winner Wednesday Raffle Tickets | Vintage Style Contest Tickets</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 40px 20px;
+            overflow-x: auto;
+        }
+
+        .ticket-strip-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 40px 0;
+        }
+
+        .ticket-strip-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            min-width: min-content;
+            padding: 0 20px;
+        }
+
+        /* Individual Ticket Styling */
+        .raffle-ticket {
+            position: relative;
+            width: 280px;
+            height: 140px;
+            background: linear-gradient(135deg, #d4e82e 0%, #c5d927 50%, #d4e82e 100%);
+            border: 4px solid #a8b824;
+            border-radius: 8px;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            margin-right: -4px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .raffle-ticket:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 12px 24px rgba(0, 0, 0, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .raffle-ticket:focus {
+            outline: 3px solid #333;
+            outline-offset: 3px;
+            z-index: 10;
+        }
+
+        /* Perforated Edge Effect - Left Side */
+        .raffle-ticket::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #a8b824 0px,
+                #a8b824 6px,
+                transparent 6px,
+                transparent 12px
+            );
+        }
+
+        /* Perforated Edge Effect - Right Side */
+        .raffle-ticket::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #a8b824 0px,
+                #a8b824 6px,
+                transparent 6px,
+                transparent 12px
+            );
+        }
+
+        /* Ticket Content Container */
+        .ticket-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Main Title "Winner Wednesday" */
+        .ticket-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: #1a1a1a;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 
+                2px 2px 0px rgba(255, 255, 255, 0.3),
+                -1px -1px 0px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        /* Serial Number */
+        .ticket-serial {
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Decorative Corner Elements */
+        .ticket-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #1a1a1a;
+            opacity: 0.3;
+        }
+
+        .corner-tl {
+            top: 10px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-tr {
+            top: 10px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bl {
+            bottom: 10px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-br {
+            bottom: 10px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Texture Overlay */
+        .ticket-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.03) 0px,
+                    transparent 2px,
+                    transparent 4px
+                );
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .raffle-ticket {
+                width: 220px;
+                height: 110px;
+            }
+
+            .ticket-title {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .ticket-serial {
+                font-size: 12px;
+                bottom: 8px;
+                right: 12px;
+            }
+
+            .ticket-corner {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .raffle-ticket {
+                width: 180px;
+                height: 90px;
+            }
+
+            .ticket-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .ticket-serial {
+                font-size: 10px;
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .raffle-ticket {
+                transition: none;
+            }
+            
+            .raffle-ticket:hover {
+                transform: none;
+            }
+        }
+
+        /* SEO and Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- SEO Header Section -->
+    <header>
+        <h1>Winner Wednesday Raffle Tickets</h1>
+        <p class="description">Shop all the Winner Wednesday raffles that are still open anytime and check out all at once - it's never been easier to enter the raffles!</p>
+    </header>
+
+    <!-- Main Ticket Strip -->
+    <main class="ticket-strip-wrapper" role="main" aria-label="Winner Wednesday raffle ticket strip">
+        <div class="ticket-strip-container">
+            
+            <!-- Ticket 1 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31221" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31221</div>
+                </div>
+            </a>
+
+            <!-- Ticket 2 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31222" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31222</div>
+                </div>
+            </a>
+
+            <!-- Ticket 3 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31223" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31223</div>
+                </div>
+            </a>
+
+            <!-- Ticket 4 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31224" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31224</div>
+                </div>
+            </a>
+
+            <!-- Ticket 5 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31225" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31225</div>
+                </div>
+            </a>
+
+            <!-- Ticket 6 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31226" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31226</div>
+                </div>
+            </a>
+
+            <!-- Ticket 7 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31227" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31227</div>
+                </div>
+            </a>
+
+            <!-- Ticket 8 -->
+            <a href="https://4goodvibes.shop/raffles-and-games-6629" class="raffle-ticket" role="button" aria-label="Winner Wednesday raffle ticket number 31228" tabindex="0">
+                <div class="ticket-texture"></div>
+                <div class="ticket-corner corner-tl"></div>
+                <div class="ticket-corner corner-tr"></div>
+                <div class="ticket-corner corner-bl"></div>
+                <div class="ticket-corner corner-br"></div>
+                <div class="ticket-content">
+                    <div class="ticket-title">Winner Wednesday</div>
+                    <div class="ticket-serial">31228</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Winner Wednesday Raffle Tickets",
+        "description": "Vintage-style raffle tickets with perforated edges and sequential serial numbers, perfect for contests and giveaways",
+        "image": "https://example.com/images/winner-wednesday-tickets.jpg",
+        "brand": {
+            "@type": "Brand",
+            "name": "Winner Wednesday"
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+</body>
+</html>
